@@ -29,14 +29,17 @@ response.then((v) => {
 })
 
 
-let str="WELCOME TO CODERWORLD";
-st=Array.from(str);
-let st2=document.getElementById('str1');
-console.log(st2)
-setInterval(function () {
-st.forEach(Element => {
- st2.innerText = Element
-    // console.log(Element)
+// let str="WELCOME TO CODERWORLD";
+// st=Array.from(str);
+// let st2=document.getElementById('str1');
+// console.log(st2)
+// setInterval(function () {
+// st.forEach(Element => {
+//  st2.innerText = Element
+//     // console.log(Element)
 
-  });
-}, 1000);
+//   });
+// }, 1000);
+
+
+// My name is hero
