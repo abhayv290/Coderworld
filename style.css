@@ -1,0 +1,56 @@
+*{margin: 0px;
+padding: 0px;
+}
+#CardContainer{
+    margin: 10px;
+}
+.row{
+    justify-content: center;
+margin: 10px;
+}
+
+ .jumbotron{
+   margin: 20px 84px;
+ }
+  
+ .desc{
+  display: flex;
+ }
+ .left{
+  width: 40vw;
+  width: 465vw
+ }
+ .left h3{
+  margin: 10vh;
+ }
+.btn{
+    background-color: blue;
+    color: whitesmoke;
+}
+
+footer{
+    height: 10vh;
+    background-color: grey;
+    color: white;
+    display: flex;
+  justify-content: center;
+    align-items: center;
+}
+
+@media  screen and (max-width:1000px) {
+  .desc{
+    display: flex;
+   flex-direction: column;
+    
+   .left{
+    width: 75vw;
+   }
+   .left h3{
+    margin: 5vh;
+    
+   }
+   .right img{
+    height: 162px;
+   }
+  }
+}
