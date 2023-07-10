@@ -2,13 +2,13 @@
 let url = "https://kontests.net/api/v1/all"
 let response = fetch(url)
 response.then((v) => {
-    return v.json()
+  return v.json()
 }).then((contest) => {
-    console.log(contest)
-    ihtml = ""
-    for (item in contest) {
-        console.log(contest[item])
-        ihtml += `
+  console.log(contest)
+  ihtml = ""
+  for (item in contest) {
+    console.log(contest[item])
+    ihtml += `
     <div class="card" style="width: 18rem; margin: 5px">
     <img src="Coderworld.jpg" alt="coderworld">
     
@@ -24,22 +24,32 @@ response.then((v) => {
     </div>
   </div>
   `
-    }
-    CardContainer.innerHTML=ihtml
+  }
+  CardContainer.innerHTML = ihtml
 })
 
 
-// let str="WELCOME TO CODERWORLD";
-// st=Array.from(str);
-// let st2=document.getElementById('str1');
-// console.log(st2)
-// setInterval(function () {
-// st.forEach(Element => {
-//  st2.innerText = Element
-//     // console.log(Element)
+const text = "Here you can find all your need on coding contests and hackethons at one place ,So why wait let just dive into coding"; 
 
-//   });
-// }, 1000);
+let index = 0;
+let timer;
+
+function typeEffect() {
+  const typewriterElement = document.getElementById("typewriter");
+ 
+  typewriterElement.textContent = text.slice(0, index);
+
+  index++;
+
+  if (index > text.length) {
+    clearInterval(timer);
+    setTimeout(() => {
+      index = 0;
+      timer = setInterval(typeEffect, 1000); 
+    }, 2000); 
+  }
+}
+
+timer = setInterval(typeEffect, 100); 
 
 
-// My name is hero
