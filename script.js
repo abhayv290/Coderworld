@@ -49,7 +49,29 @@ function typeEffect() {
     }, 2000); 
   }
 }
-
 timer = setInterval(typeEffect, 100); 
+
+
+const text1="CODERWORLD"
+let index1 = 0;
+let timer1;
+
+function typeEffect1() {
+  const typewriterElement = document.getElementById("str1");
+ 
+  typewriterElement.innerHTML ='WELCOME TO '+ text1.slice(0, index1);
+
+  index1++;
+
+  if (index1 > text1.length) {
+    clearInterval(timer1);
+    setTimeout(() => {
+      index1 = 0;
+      timer1 = setInterval(typeEffect1, 500); 
+    }, 2000); 
+  }
+}
+timer1 = setInterval(typeEffect1, 100); 
+
 
 

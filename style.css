@@ -31,8 +31,8 @@ margin: 10px;
 
 footer{
     height: 10vh;
-    background-color: grey;
-    color: white;
+    background-color: #e9e6e6;
+    color: #013601;
     display: flex;
   justify-content: center;
     align-items: center;
