@@ -1,5 +1,13 @@
-import '@/styles/globals.css'
+import Navbar from '@/Components/Navbar'
+import React from 'react'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const _app = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  )
 }
+
+export default _app
