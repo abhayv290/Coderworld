@@ -1,0 +1,10 @@
+{
+    "title": "How to Learn Flask",
+    "description": "Learning Flask, a lightweight and powerful Python web framework, can be a rewarding journey for web development. Here's a description of how to get started with Flask:",
+    "author": "Abhay bro",
+    "steps": [
+        "Python Fundamentals: Begin by mastering the basics of Python, as Flask is a Python web framework. Understand variables, data types, loops, functions, and object-oriented programming.",
+        "Web Basics: Familiarize yourself with web development fundamentals, including how the web works, HTTP protocols, and how web servers and browsers communicate."
+    ],
+    "slug": "how-to-learn-flask"
+}
