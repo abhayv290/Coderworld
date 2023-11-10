@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/blog.module.css';
+// import type {  GetServerSideProps } from 'next'
 import Link from 'next/link';
 
-export default function Blog() {
-    const [blogs, setblogs] = useState([]);
+export default function Blog(props) {
+    const [blogs, setblogs] = useState(props.blogdata);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/api/blogs');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const parsed = await response.json();
-                setblogs(parsed);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+
 
 
     return (
@@ -38,3 +25,19 @@ export default function Blog() {
         </div>
     );
 }
+export async function getServerSideProps(context) {
+
+    const response = await fetch('http://localhost:3000/api/blogs');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const blogdata = await response.json();
+    return {
+
+        props: { blogdata }
+    }
+
+}
+
+
+

@@ -1,27 +1,11 @@
 import { React, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-export default function slug() {
-    const router = useRouter();
-    const [blogs, setblogs] = useState(null);
+export default function slug(props) {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if (!router.isReady) return;
-                // console.log(router.query);
-                const { slug } = router.query;
-                const response = await fetch(`http://localhost:3000/api/getblogs?slug=${slug}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const parsed = await response.json();
-                setblogs(parsed);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, [router.isReady]);
+    const [blogs, setblogs] = useState(props.blogdata);
+
+
+
     // console.log(blogs);
     return (
         <div className='container my-5'>
@@ -32,5 +16,20 @@ export default function slug() {
                 <li>{blogs && blogs.steps}</li>
             </ul>
         </div>
+
     )
+}
+export async function getServerSideProps(context) {
+
+    const { slug } = context.query;
+    const response = await fetch(`http://localhost:3000/api/getblogs?slug=${slug}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const blogdata = await response.json();
+    return {
+
+        props: { blogdata }
+    }
+
 }
