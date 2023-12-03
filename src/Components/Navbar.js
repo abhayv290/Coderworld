@@ -6,19 +6,10 @@ import { useEffect } from 'react'
 
 
 export default function Navbar() {
-
-
-
     const pathname = usePathname();
     useEffect(() => {
         console.log(pathname);
     }, [pathname])
-
-
-
-
-
-
 
     return (
 
@@ -32,7 +23,7 @@ export default function Navbar() {
                     <div className={`offcanvas offcanvas-start  ${styles.navcanvas}`} data-bs-backdrop="static" tabIndex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                         <ul className="navbar-nav fs-5">
                             <li className="nav-item">
-                                <Link className={`nav-link ${pathname == "/" ? styles.navcolor : ""}`} aria-current="page" href={'/'}>Home</Link>
+                                <Link className={`nav-link ${pathname === "/" ? styles.navcolor : ""}`} aria-current="page" href={'/'}>Home</Link>
                             </li>
 
                             <li className="nav-item">

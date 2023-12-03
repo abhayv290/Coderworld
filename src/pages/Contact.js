@@ -1,6 +1,6 @@
-// pages/contact.js
+
 import { useState } from 'react';
-// import { headers } from '../../next.config';
+
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -16,11 +16,10 @@ const Contact = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            // Assuming formData is an object
             const response = await fetch('http://localhost:3000/api/postContact', {
                 method: 'POST',
                 headers: {
@@ -28,19 +27,16 @@ const Contact = () => {
                 },
                 body: JSON.stringify(formData),
             });
-
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-
             const responseData = await response.json();
-            //console.log('Server response:', responseData);
         } catch (error) {
             console.error('Error submitting form:', error);
         }
 
-        //console.log('Form submitted:', formData);
     };
+
 
 
     return (
@@ -94,3 +90,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
