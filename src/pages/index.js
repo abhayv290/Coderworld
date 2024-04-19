@@ -19,12 +19,12 @@ export default function Home() {
         <title>CoderWorld: Blogging the Code Revolution"</title>
         <meta name="description" content="Join the code revolution at CoderWorld, where our blog is your window into the coding universe. Stay informed, inspired, and connected with our community of bloggers and developers. Explore, learn, and blog your way to coding greatness" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="../../public/favicon-16x16.png" />
+
       </Head>
 
 
 
-      <main className={`${styles.main}`}>
+      <main className={ `${styles.main}` }>
         <div className='container'>
           <h1 className='text-center fw-bold'>CoderWorld <span><img src="public\favicon-16x16.png" alt="" /></span></h1>
           <p className='text-center fs-2 '>Blogging the Code Revolution</p>

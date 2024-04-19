@@ -31,6 +31,9 @@ const Contact = () => {
                 throw new Error('Network response was not ok');
             }
             const responseData = await response.json();
+            const { name, value } = e.target;
+            setFormData({ name: "", email: "", message: " " });
+
         } catch (error) {
             console.error('Error submitting form:', error);
         }
@@ -42,7 +45,7 @@ const Contact = () => {
     return (
         <div className="container mt-5">
             <h1>Contact Page</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={ handleSubmit }>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">
                         Name
@@ -52,8 +55,8 @@ const Contact = () => {
                         className="form-control"
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
+                        value={ formData.name }
+                        onChange={ handleChange }
                     />
                 </div>
                 <div className="mb-3">
@@ -65,8 +68,8 @@ const Contact = () => {
                         className="form-control"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={ formData.email }
+                        onChange={ handleChange }
                     />
                 </div>
                 <div className="mb-3">
@@ -77,11 +80,11 @@ const Contact = () => {
                         className="form-control"
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        value={ formData.message }
+                        onChange={ handleChange }
                     ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary ">
                     Submit
                 </button>
             </form>

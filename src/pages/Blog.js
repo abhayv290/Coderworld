@@ -12,15 +12,15 @@ export default function Blog(props) {
     return (
         <div className='container m-5'>
             <main>
-                {blogs.map((item) => {
-                    return <div key={item.slug} className={`${styles.blogItem}  my-5`}>
-                        <Link href={`/BlogPost/${item.slug}`}>
-                            <h3>{item.title}</h3>
+                { blogs.map((item) => {
+                    return <div key={ item.slug } className={ `${styles.blogItem}  my-5` }>
+                        <Link href={ `/BlogPost/${item.slug}` }>
+                            <h3>{ item.title }</h3>
                         </Link>
-                        <p>{item.description.substr(0, 200)}</p>
+                        <p>{ item.description.substr(0, 200) }</p>
                     </div>
 
-                })}
+                }) }
             </main>
         </div>
     );
